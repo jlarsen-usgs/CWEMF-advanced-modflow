@@ -1,8 +1,9 @@
-# CWEMF-advanced-modflow
-Advanced Modeling of Groundwater Flow (GW3099)  
+# CWEMF Advanced MODFLOW 6
+Advanced Groundwater Modeling with MODFLOW 6
 Sacramento, CA  
 September 15 - 17, 2026 
 
+![image info](./images/intro2mf6.jpeg)
 
 ## Location
 * Classroom: Woodard and Curran, Sacramento: 801 T St, Sacramento, CA 95811
