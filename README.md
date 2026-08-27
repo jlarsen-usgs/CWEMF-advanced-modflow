@@ -56,9 +56,11 @@ The following tentative agenda is based on a start time each morning of 8:30 AM 
 |11:00 AM   |XT3D                              |45 minutes, Provost                |
 |11:45 AM   |LUNCH                             |1 hour 15 minutes                  |
 |1:00 PM    |Buoyancy and Viscosity            |45 minutes, Provost/Morway         |
-|1:45 PM    |Parallel MODFLOW Part 1           |1 hour, Larsen                     |
-|2:45 PM    |BREAK                             |15 minutes                         |
-|3:00 PM    |Parallel MODFLOW Part 2           |1 hour 30 minutes, Larsen          |
+|1:45 PM    |Multi-Model Coupling              |30 minutes, Morway                 |
+|2:15 PM    |BREAK                             |15 minutes                         |
+|2:30 PM    |Parallel MODFLOW Part 1           |1 hour, Larsen                     |
+|3:30 PM    |BREAK                             |15 minutes                         |
+|3:45 PM    |Parallel MODFLOW Part 2           |45 minutes, Larsen                 |
 |4:30 PM    |ADJOURN                           |                                   |
 
 ### Thursday
@@ -74,5 +76,5 @@ The following tentative agenda is based on a start time each morning of 8:30 AM 
 |2:15 PM    |BREAK                             |15 minutes                         |
 |2:30 PM    |ABC Utility                       |45 minutes, Morway                 |
 |3:15 PM    |Advanced Visualization            |45 minutes, Larsen                 |
-|4:00 PM    |Wrap-up                           |30 minutes, Larsen                 |
+|4:00 PM    |Wrap-up/future directions         |30 minutes, Larsen                 |
 |4:30 PM    |ADJOURN                           |                                   |
