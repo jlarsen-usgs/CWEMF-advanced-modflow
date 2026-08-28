@@ -13,20 +13,18 @@ September 15 - 17, 2026
 This class will cover many of the advanced MODFLOW 6 capabilities. Most of the class will be taught using Flopy and Jupyter Notebooks.  In addition to lectures, most sessions will include in-class exercises to give attendees a better understanding of how to use the modeling tools.
 
 ## Overview : needs updating
-* **Monday**: Getting started, Structured and unstructured grids (DIS, DISV, DISU) and LGR; XT3D; Advanced packages (LAK, SFR, MAW, UZF, MVR)
-* **Tuesday**: NetCDF; Groundwater Transport (GWT) and associated advanced packages (SFT, UZT, *etc.*), Buoyancy (BUY) and Viscosity (VSC); Groundwater Energy (GWE) and associated advanced packages (SFE, UZE, *etc.*)
-* **Wednesday**: Solver settings; Particle Tracking (PRT); Skeletal Storage, Compaction, and Subsidence (CSUB) Package; MODFLOW API
-* **Thursday**: pywatershed; MODFLOW API - Coupling Models; Surface Water Flow (SWF); Parallel MODFLOW
-* **Friday**: PEST++; Advanced Visualization
+* **Tuesday**: 
+* **Wednesday**: 
+* **Thursday**: 
 
 ## Instructors
-* Josh Larsen
-* Eric Morway
-* Alden Provost
+* Josh Larsen, U.S. Geological Survey, California Water Science Center
+* Eric Morway, U.S. Geological Survey, Nevada Water Science Center
+* Alden Provost, U.S. Geological Survey, Integrated Modeling and Prediction Division
 
 ## Software
 
-We will be using python during the class to build model datasets, run models, and post-process model results. The software has been installed on the USGS Hovenweep Supercomputer but it would be good to install the software The python on your laptop before the class. Software installation instructions for local installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact jdhughes@usgs.gov if you have any problems installing the class software.
+We will be using python during the class to build model datasets, run models, and post-process model results. It would be good to install the software on your laptop before the class. Software installation instructions for local installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact XXXXXXXXXXX if you have any problems installing the class software.
 
 ## Agenda: Tenative, may need further adjustment
 
