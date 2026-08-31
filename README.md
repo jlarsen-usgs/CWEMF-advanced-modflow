@@ -10,7 +10,9 @@ September 15 - 17, 2026
 
 
 ## Course Description
-This class will cover many of the advanced MODFLOW 6 capabilities. Most of the class will be taught using Flopy and Jupyter Notebooks.  In addition to lectures, most sessions will include in-class exercises to give attendees a better understanding of how to use the modeling tools.
+This class will cover many of the advanced MODFLOW 6 capabilities. Most of the class will be taught using Flopy and 
+Jupyter Notebooks.  In addition to lectures, most sessions will include in-class exercises to give attendees a better 
+understanding of how to use the modeling tools.
 
 ## Overview : needs updating
 * **Tuesday**: 
@@ -24,11 +26,15 @@ This class will cover many of the advanced MODFLOW 6 capabilities. Most of the c
 
 ## Software
 
-We will be using python during the class to build model datasets, run models, and post-process model results. It would be good to install the software on your laptop before the class. Software installation instructions for local installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact XXXXXXXXXXX if you have any problems installing the class software.
+We will be using python during the class to build model datasets, run models, and post-process model results. It would 
+be good to install the software on your laptop before the class. Software installation instructions for local 
+installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact Josh Larsen (jlarse@usgs.gov) if you have any 
+problems installing the class software.
 
 ## Agenda: Tenative, may need further adjustment
 
-The following tentative agenda is based on a start time each morning of 8:30 AM and an ending time each day of 4:30 PM.  The agenda may be adjusted during the week in response to student requests.
+The following tentative agenda is based on a start time each morning of 8:30 AM and an ending time each day of 4:30 PM.  
+The agenda may be adjusted during the week in response to student requests.
 
 ### Tuesday
 
