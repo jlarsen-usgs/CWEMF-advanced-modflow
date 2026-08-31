@@ -28,7 +28,7 @@ understanding of how to use the modeling tools.
 
 We will be using python during the class to build model datasets, run models, and post-process model results. It would 
 be good to install the software on your laptop before the class. Software installation instructions for local 
-installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact Josh Larsen (jlarse@usgs.gov) if you have any 
+installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact Josh Larsen (jlarsen@usgs.gov) if you have any 
 problems installing the class software.
 
 ## Agenda: Tenative, may need further adjustment
