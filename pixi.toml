@@ -1,0 +1,101 @@
+[workspace]
+name = "mf6xtd"
+version = "1.0.1"
+channels = ["conda-forge"]
+
+# for intel Mac add "osx-64" to platforms
+platforms = ["linux-64", "linux-aarch64", "osx-arm64", "win-64"]
+
+[system-requirements]
+linux = "4.4.0"
+
+[tasks]
+# install environment
+update-dependencies = "pixi update flopy modflow-devtools"
+update-flopy-dfn = { cmd = "python -m flopy.mf6.utils.generate_classes --dfnpath modflow6/doc/mf6io/mf6ivar/dfn" }
+test-installation = { cmd = "python test_installation.py", cwd = "installation" }
+obtain-programs = { cmd = "get-modflow :python --subset gridgen,triangle,mp7" }
+install = { depends-on = [
+  "obtain-modflow",
+  "obtain-programs",
+  "test-installation",
+] }
+install-flopy4 = "pip install 'git+https://github.com/modflowpy/pyphoenix-project.git'"
+
+# run jupyter lab
+jupyter = { cmd = "jupyter lab" }
+code = { cmd = "code ." }
+
+[target.unix.tasks]
+update-pc-files = { cmd = "python update_pc_files.py", cwd = "installation" }
+clone-modflow = "rm -rf modflow6/ && git clone https://github.com/MODFLOW-ORG/modflow6.git"
+setup-modflow = { cmd = "PKG_CONFIG_PATH=$PIXI_PROJECT_ROOT/.pixi/envs/default/lib/pkgconfig && rm -rf builddir && meson setup builddir -Ddebug=false -Dextended=true --prefix=$PIXI_PROJECT_ROOT/.pixi/envs/default/ --libdir=lib", cwd = "modflow6" }
+install-modflow = { cmd = "meson install -C builddir", cwd = "modflow6" }
+test-modflow = { cmd = "meson test --verbose --no-rebuild -C builddir", cwd = "modflow6" }
+obtain-modflow = { depends-on = [
+  "update-pc-files",
+  "clone-modflow",
+  "update-dependencies",
+  "update-flopy-dfn",
+  "setup-modflow",
+  "install-modflow",
+  "test-modflow",
+] }
+
+[target.win-64.tasks]
+clone-modflow-win = { cmd = "rm -rf modflow6; git clone https://github.com/MODFLOW-ORG/modflow6.git" }
+get-modflow-win = { cmd = "get-modflow :python --ostag win64ext --repo modflow6-nightly-build" }
+obtain-modflow = { depends-on = [
+  "clone-modflow-win",
+  "update-dependencies",
+  "update-flopy-dfn",
+  "get-modflow-win",
+] }
+
+[dependencies]
+# required
+git = "*"
+jupyterlab = "*"
+jupytext = "*"
+matplotlib = ">=1.4.0"
+numpy = ">=1.20.3"
+pandas = ">=2.0.0,<3"
+pip = "*"
+pytest = "*"
+python = ">=3.10,<3.13"
+pyvista = "==0.48"
+
+# notebooks
+ipywidgets = "*"
+
+# flopy
+ffmpeg = "*"
+shapely = ">=2.0"
+geopandas = "*"
+h5py = "*"
+pymetis = "*"
+pyshp = "*"
+rasterio = "*"
+rasterstats = "*"
+xmipy = "*"
+pyarrow = "*"
+xarray = "*"
+netcdf4 = "*"
+
+[pypi-dependencies]
+modflow-devtools = { git = "https://github.com/MODFLOW-ORG/modflow-devtools.git", extras = ["dfn"] }
+flopy = { git = "https://github.com/modflowpy/flopy.git" }
+modflowapi = { git = "https://github.com/MODFLOW-ORG/modflowapi.git", branch = "develop" }
+
+[target.unix.dependencies]
+# build dependencies
+clang = "*"
+gfortran = "*"
+meson = ">=1.3.0"
+ninja = "*"
+pkg-config = "*"
+
+# extended build dependencies
+openmpi = "*"
+petsc = "==3.20.5"
+netcdf-fortran = "*"
