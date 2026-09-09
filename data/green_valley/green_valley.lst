@@ -1,0 +1,1261 @@
+                               MODFLOW 6 EXTENDED
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                          GROUNDWATER FLOW MODEL (GWF)
+                        VERSION 6.8.0.dev0+74a2ba0.dirty
+                               ***DEVELOP MODE***
+
+   MODFLOW 6 compiled Aug 31 2026 20:11:52 with Intel(R) Fortran Intel(R) 64
+  Compiler Classic for applications running on Intel(R) 64, Version 2021.12.0
+                             Build 20240222_000000
+
+This software is preliminary or provisional and is subject to 
+revision. It is being provided to meet the need for timely best 
+science. The software has not received final approval by the U.S. 
+Geological Survey (USGS). No warranty, expressed or implied, is made 
+by the USGS or the U.S. Government as to the functionality of the 
+software and related material nor shall the fact of release 
+constitute any such warranty. The software is provided on the 
+condition that neither the USGS nor the U.S. Government shall be held 
+liable for any damages resulting from the authorized or unauthorized 
+use of the software.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+The following library is used in this USGS product:
+
+    NetCDF, network Common Data Form software library
+      Copyright (c) 1993-2014 University Corporation for Atmospheric
+      Research/Unidata. Redistribution and use in source and binary
+      forms, with or without modification, are permitted provided that
+      the conditions in the NetCDF copyright are met
+        (https://www.unidata.ucar.edu/software/netcdf/copyright.html)
+
+The following 2-clause BSD License library is used in this
+USGS product:
+
+    PETSc, the Portable, Extensible Toolkit for Scientific
+    Computation Library
+      Copyright (c) 1991-2021, UChicago Argonne, LLC
+      and the PETSc Development Team All rights reserved.
+      (https://petsc.org/release/)
+
+MODFLOW 6 compiler options: /Isrc\libmf6_external.a.p /Isrc\libmf6core.a.p
+/Isrc /I..\src /I..\..\netcdf\netCDF4.9.3-NC4-64\include
+/I..\..\netcdf\netcdf-fortran-4.6.2\build\fortran /I..\..\petsc\include
+/I..\..\petsc\arch-mswin-c-opt\include /I. "/IC:\Program Files
+(x86)\Intel\oneAPI\mpi\latest\env\\..\include" "/IC:\Program Files
+(x86)\Intel\oneAPI\mpi\latest\env\\..\include\mpi"
+/ID:/a/modflow6-nightly-build/modflow6-nightly-build/modflow6/.pixi/envs/defau
+lt/Library/include /MT /nologo /warn:general /warn:truncated_source
+/stand:f18 /O3 /fpe:0 /heap-arrays:0 /traceback /fpp /Qdiag-disable:7416
+/Qdiag-disable:7025 /Qdiag-disable:5268 /Qdiag-disable:10448 /D__WITH_PETSC__
+/D__WITH_MPI__ /D__WITH_NETCDF__ /DDLL_NETCDF
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+D:/teaching/cwemf-2026/CWEMF_advanced_modflow/.pixi/envs/default/python.exe -m ipykernel_launcher -f C:\Users\jlarsen\AppData\Roaming\jupyter\runtime\kernel-1cad5437-b14f-4cca-87f5-6cc571cfd9ac.json
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+ NAMEFILE OPTIONS:
+    NEWTON-RAPHSON method enabled for the model.
+    FLOWS WILL BE SAVED TO BUDGET FILE SPECIFIED IN OUTPUT CONTROL
+ END NAMEFILE OPTIONS:
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/DIS                        
+
+
+ NPF -- NODE PROPERTY FLOW PACKAGE, VERSION 1, 3/30/2015 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/NPF                        
+
+
+ IC -- Initial Conditions Package, Version 8, 3/28/2015 input read from mempath: __INPUT__/GREEN_VALLEY/IC                         
+
+
+ Setting Discretization Options
+    Model length unit [0=UND, 1=FEET, 2=METERS, 3=CENTIMETERS] set as 1
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 1
+    NROW = 15
+    NCOL = 10
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+    IDOMAIN set from input file
+ End Setting Discretization Griddata
+
+
+ The specified IDOMAIN results in a reduced number of cells.
+ Number of user nodes: 150
+ Number of nodes in solution: 116
+
+
+ Setting NPF Options
+    Specific discharge will be calculated at cell centers and written to DATA-SPDIS in budget file when requested.
+ End Setting NPF Options
+
+ Setting NPF Griddata
+    ICELLTYPE set from input file
+    K set from input file
+    K33 not provided.  Setting K33 = K.
+    K22 not provided.  Setting K22 = K.
+ End Setting NPF Griddata
+
+
+ WEL -- WEL PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/WEL_0                      
+
+ PROCESSING WEL BASE OPTIONS
+ END OF WEL BASE OPTIONS
+
+ PROCESSING WEL OPTIONS
+ END OF WEL OPTIONS
+
+ PROCESSING WEL BASE DIMENSIONS
+    MAXBOUND =      10
+ END OF WEL BASE DIMENSIONS
+
+ GHB -- GHB PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/GHB_0                      
+
+ PROCESSING GHB BASE OPTIONS
+ END OF GHB BASE OPTIONS
+
+ PROCESSING GHB OPTIONS
+ END OF GHB OPTIONS
+
+ PROCESSING GHB BASE DIMENSIONS
+    MAXBOUND =       2
+ END OF GHB BASE DIMENSIONS
+
+ RCH -- RCH PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/RCHA_0                     
+
+ PROCESSING RCH BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF RCH BASE OPTIONS
+
+ PROCESSING RCHA OPTIONS
+ END OF RCHA OPTIONS
+
+ EVT -- EVT PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/EVTA_0                     
+
+ PROCESSING EVT BASE OPTIONS
+    PACKAGE INPUT WILL BE READ AS LAYER ARRAYS.
+ END OF EVT BASE OPTIONS
+
+ PROCESSING EVTA OPTIONS
+ END OF EVTA OPTIONS
+
+ SFR   -- SFR PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM UNIT 1278
+ # File generated by Flopy version 3.11.0.dev0 on 09/09/2026 at 10:07:00.
+
+ PROCESSING SFR OPTIONS
+
+ OPENED green_valley.sfr.obs
+ FILE TYPE:OBS   UNIT 1281   STATUS:OLD                 
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READ                
+
+    LENGTH CONVERSION VALUE (3.280810000000000) SPECIFIED.
+ END OF SFR OPTIONS
+
+ PROCESSING SFR DIMENSIONS
+    NREACHES = 36
+ END OF SFR DIMENSIONS
+
+ PROCESSING SFR PACKAGEDATA
+ END OF SFR PACKAGEDATA
+
+ PROCESSING SFR CONNECTIONDATA
+ END OF SFR CONNECTIONDATA
+
+ PROCESSING SFR DIVERSIONS
+ END OF SFR DIVERSIONS
+    STRT set from input file
+
+ STO -- STORAGE PACKAGE, VERSION 1, 5/19/2014 INPUT READ FROM MEMPATH: __INPUT__/GREEN_VALLEY/STO                        
+
+
+ PROCESSING STORAGE OPTIONS
+ END OF STORAGE OPTIONS
+    BINARY GRID INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1282
+      FILE NAME: green_valley.dis.grb
+
+ OPENED green_valley.dis.grb
+ FILE TYPE:DATA(BINARY)   UNIT 1282   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+      THE LAST TIME STEP WILL BE PRINTED
+      THE LAST TIME STEP WILL BE PRINTED
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1283
+      FILE NAME: green_valley.cbc
+
+ OPENED green_valley.cbc
+ FILE TYPE:DATA(BINARY)   UNIT 1283   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    HEAD INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1284
+      FILE NAME: green_valley.hds
+
+ OPENED green_valley.hds
+ FILE TYPE:DATA(BINARY)   UNIT 1284   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+ END OF OC OPTIONS
+
+The observation utility is active for "SFR_0"
+ # File generated by Flopy version 3.11.0.dev0 on 09/09/2026 at 10:07:00.
+
+Processing observation options:
+
+Text output number of digits of precision set to: 10
+The PRINT_INPUT option has been specified.
+
+
+ OBSERVATIONS READ FROM FILE "green_valley.sfr.obs"
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ NAME                                     TYPE                                       TIME         LOCATION DATA                              OUTPUT FILENAME                                                                 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ R01_STAGE                                CONTINUOUS  STAGE                          ALL TIMES    "  4"                                      green_valley.sfr.obs.csv                                                        
+ R02_STAGE                                CONTINUOUS  STAGE                          ALL TIMES    "  15"                                     green_valley.sfr.obs.csv                                                        
+ R03_STAGE                                CONTINUOUS  STAGE                          ALL TIMES    "  27"                                     green_valley.sfr.obs.csv                                                        
+ R04_STAGE                                CONTINUOUS  STAGE                          ALL TIMES    "  36"                                     green_valley.sfr.obs.csv                                                        
+ R01_FLOW                                 CONTINUOUS  DOWNSTREAM-FLOW                ALL TIMES    "  4"                                      green_valley.sfr.obs.csv                                                        
+ R02_FLOW                                 CONTINUOUS  DOWNSTREAM-FLOW                ALL TIMES    "  15"                                     green_valley.sfr.obs.csv                                                        
+ R03_FLOW                                 CONTINUOUS  DOWNSTREAM-FLOW                ALL TIMES    "  27"                                     green_valley.sfr.obs.csv                                                        
+ R04_FLOW                                 CONTINUOUS  DOWNSTREAM-FLOW                ALL TIMES    "  36"                                     green_valley.sfr.obs.csv                                                        
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ SFR PACKAGE (SFR_0) CONVERSION DATA
+    UNIT CONVERSION VALUE (1.485914064252526).
+
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      THE LAST TIME STEP WILL BE SAVED
+      THE LAST TIME STEP WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 1 IS STEADY-STATE
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      1
+
+ HEAD WILL BE SAVED ON UNIT 1284 AT END OF TIME STEP    1, STRESS PERIOD    1
+
+
+  SFR_0 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE SFR_0      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =           0.0000                   GWF =          11.4636
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =         205.0000
+         EXT-OUTFLOW =           0.0000           EXT-OUTFLOW =           0.0000
+             STORAGE =           0.0000               STORAGE =           0.0000
+
+            TOTAL IN =           0.0000              TOTAL IN =         216.4636
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =           0.0000                   GWF =          47.0478
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+         EXT-OUTFLOW =           0.0000           EXT-OUTFLOW =         169.4159
+             STORAGE =           0.0000               STORAGE =           0.0000
+
+           TOTAL OUT =           0.0000             TOTAL OUT =         216.4636
+
+            IN - OUT =           0.0000              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+                 GHB =           0.0000                   GHB =           0.2529     GHB_0                            
+                RCHA =           0.0000                  RCHA =           1.7938     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+                 SFR =           0.0000                   SFR =          47.0478     SFR_0                            
+
+            TOTAL IN =           0.0000              TOTAL IN =          49.0944
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =           0.0000                STO-SS =           0.0000     STORAGE                          
+              STO-SY =           0.0000                STO-SY =           0.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+                 GHB =           0.0000                   GHB =           0.2026     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA =           0.0000                  EVTA =          37.4282     EVTA_0                           
+                 SFR =           0.0000                   SFR =          11.4636     SFR_0                            
+
+           TOTAL OUT =           0.0000             TOTAL OUT =          49.0944
+
+            IN - OUT =           0.0000              IN - OUT =      -2.6999E-07
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH  0.0000      0.0000      0.0000      0.0000      0.0000    
+ STRESS PERIOD TIME  0.0000      0.0000      0.0000      0.0000      0.0000    
+         TOTAL TIME  0.0000      0.0000      0.0000      0.0000      0.0000    
+
+
+end timestep
+
+
+start timestep kper="2" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 2
+      THE LAST TIME STEP WILL BE SAVED
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 2
+
+
+ PROCESSING STORAGE PERIOD DATA
+ END PROCESSING STORAGE PERIOD DATA
+
+
+ STRESS PERIOD 2 IS TRANSIENT
+
+
+ REUSING SFRS FROM LAST STRESS PERIOD
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      1, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="2" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      2, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="3" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      3, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="4" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      4, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="5" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      5, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="6" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      6, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="7" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      7, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="8" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      8, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="9" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP      9, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="10" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     10, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="11" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     11, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="12" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     12, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="13" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     13, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="14" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     14, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="15" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     15, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="16" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     16, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="17" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     17, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="18" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     18, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="19" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     19, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="20" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     20, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="21" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     21, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="22" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     22, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="23" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     23, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="24" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     24, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="25" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     25, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="26" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     26, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="27" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     27, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="28" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     28, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="29" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     29, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="30" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     30, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="31" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     31, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="32" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     32, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="33" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     33, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="34" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     34, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="35" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     35, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="36" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     36, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="37" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     37, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="38" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     38, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="39" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     39, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="40" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     40, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="41" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     41, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="42" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     42, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="43" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     43, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="44" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     44, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="45" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     45, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="46" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     46, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="47" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     47, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="48" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     48, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="49" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     49, STRESS PERIOD      2
+
+end timestep
+
+
+start timestep kper="2" kstp="50" mode="normal"
+
+ UBDSV1 SAVING           STO-SS ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV1 SAVING           STO-SY ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV1 SAVING     FLOW-JA-FACE ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING       DATA-SPDIS IN MODEL GREEN_VALLEY     PACKAGE NPF             CONNECTED TO MODEL GREEN_VALLEY     PACKAGE NPF              ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING              WEL IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE WEL_0            ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING              GHB IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE GHB_0            ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING             RCHA IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE RCHA_0           ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING            EVTA  IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE EVTA_0           ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+ UBDSV06 SAVING              SFR IN MODEL GREEN_VALLEY     PACKAGE GREEN_VALLEY    CONNECTED TO MODEL GREEN_VALLEY     PACKAGE SFR_0            ON UNIT   1283 AT TIME STEP     50, STRESS PERIOD      2
+
+ HEAD WILL BE SAVED ON UNIT 1284 AT END OF TIME STEP   50, STRESS PERIOD    2
+
+
+  SFR_0 BUDGET FOR ENTIRE MODEL AT END OF TIME STEP   50, STRESS PERIOD   2
+  ------------------------------------------------------------------------------
+
+     CUMULATIVE SFR_0      L**3       RATES FOR THIS TIME STEP      L**3/T
+     ------------------                 ------------------------
+
+           IN:                                      IN:
+           ---                                      ---
+                 GWF =  5477413480.3035                   GWF =           3.5994
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =323465400000.0001            EXT-INFLOW =         205.0000
+         EXT-OUTFLOW =           0.0000           EXT-OUTFLOW =           0.0000
+             STORAGE =           0.0000               STORAGE =           0.0000
+
+            TOTAL IN =328942813480.3035              TOTAL IN =         208.5994
+
+          OUT:                                     OUT:
+          ----                                     ----
+                 GWF =100645652205.8753                   GWF =          62.4934
+            RAINFALL =           0.0000              RAINFALL =           0.0000
+         EVAPORATION =           0.0000           EVAPORATION =           0.0000
+              RUNOFF =           0.0000                RUNOFF =           0.0000
+          EXT-INFLOW =           0.0000            EXT-INFLOW =           0.0000
+         EXT-OUTFLOW =228297161274.4283           EXT-OUTFLOW =         146.1060
+             STORAGE =           0.0000               STORAGE =           0.0000
+
+           TOTAL OUT =328942813480.3035             TOTAL OUT =         208.5994
+
+            IN - OUT =           0.0000              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+  VOLUME BUDGET FOR ENTIRE MODEL AT END OF TIME STEP   50, STRESS PERIOD   2
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE VOLUME      L**3       RATES FOR THIS TIME STEP      L**3/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+              STO-SS =    11580656.9045                STO-SS =           0.0000     STORAGE                          
+              STO-SY =  5275915052.9626                STO-SY =           0.0000     STORAGE                          
+                 WEL =           0.0000                   WEL =           0.0000     WEL_0                            
+                 GHB =   399604278.1402                   GHB =           0.2532     GHB_0                            
+                RCHA =  2830322250.0000                  RCHA =           1.7938     RCHA_0                           
+                EVTA =           0.0000                  EVTA =           0.0000     EVTA_0                           
+                 SFR =100645652205.9832                   SFR =          62.4934     SFR_0                            
+
+            TOTAL IN =109163074443.9906              TOTAL IN =          64.5404
+
+          OUT:                                     OUT:
+          ----                                     ----
+              STO-SS =     7495274.4265                STO-SS =       5.9202E-05     STORAGE                          
+              STO-SY =  3389581485.1304                STO-SY =       2.9677E-02     STORAGE                          
+                 WEL = 68554984710.7434                   WEL =          40.0000     WEL_0                            
+                 GHB =   309168818.6040                   GHB =           0.1962     GHB_0                            
+                RCHA =           0.0000                  RCHA =           0.0000     RCHA_0                           
+                EVTA = 31424430693.2603                  EVTA =          20.7150     EVTA_0                           
+                 SFR =  5477413480.3606                   SFR =           3.5994     SFR_0                            
+
+           TOTAL OUT =109163074462.5253             TOTAL OUT =          64.5404
+
+            IN - OUT =         -18.5347              IN - OUT =      -2.5899E-08
+
+ PERCENT DISCREPANCY =          -0.00     PERCENT DISCREPANCY =          -0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP   50 IN STRESS PERIOD    2
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 1.44676E+08 2.41127E+06  40188.      1674.5      4.5845    
+ STRESS PERIOD TIME 1.57788E+09 2.62980E+07 4.38300E+05  18262.      50.000    
+         TOTAL TIME 1.57788E+09 2.62980E+07 4.38300E+05  18262.      50.000    
+
+
+end timestep
+
