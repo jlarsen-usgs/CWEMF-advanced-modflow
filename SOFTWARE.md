@@ -1,8 +1,12 @@
 # Setting up MODFLOW and class environment
 
-These are instructions for installing the extended version of MODFLOW 6 (with parallel and netcdf support), and for getting access to class materials and preparing the Python environment so you can follow along with the demos and exercises. 
+These are instructions for installing the extended version of MODFLOW 6 (with parallel and netcdf support), and for 
+getting access to class materials and preparing the Python environment so you can follow along with the demos and 
+exercises. 
 
-We support Windows, Linux, and MacOS operating systems and the steps to follow are the same. In case you prefer to run in a Linux environment on Windows, using WSL is a good option. Below you will find instructions on how to install WSL. After a successful installation you should be ready to proceed with step 1.
+We support Windows, Linux, and MacOS operating systems and the steps to follow are the same. In case you prefer to run 
+in a Linux environment on Windows, using WSL is a good option. Below you will find instructions on how to install WSL. 
+After a successful installation you should be ready to proceed with step 1.
 
 ## 1. Clone the class repo 
 
@@ -14,14 +18,16 @@ In the terminal, clone the class repo using the following command:
 git clone https://github.com/jlarsen-usgs/CWEMF-advanced-modflow.git
 ```
 
-If you do not have `git` installed (yet), you can find instructions how to do this [here](https://git-scm.com/downloads). Alternatively, you can download the zip archive from the repository at the following location:
+If you do not have `git` installed (yet), you can find instructions how to do this [here](https://git-scm.com/downloads). Alternatively, you can 
+download the zip archive from the repository at the following location:
 
 https://github.com/jlarsen-usgs/CWEMF-advanced-modflow/archive/refs/heads/main.zip
 
 and unzip and rename the folder to modflow-training-princeton2026 and continue with the next step.
 
 ## 2. Setting up MODFLOW 6 and pixi environment
-In order to set up MODFLOW 6, install the latest version of pixi. Instructions for Windows are in section 2.1; Linux and MacOS install instructions are in section 2.2:
+In order to set up MODFLOW 6, install the latest version of pixi. Instructions for Windows are in section 2.1; Linux and 
+MacOS install instructions are in section 2.2:
 
 ### 2.1 Windows Install
 On Windows open a Powershell window and run the following command:
@@ -30,7 +36,8 @@ On Windows open a Powershell window and run the following command:
 powershell -ExecutionPolicy Bypass -c "irm -useb https://pixi.sh/install.ps1 | iex"
 ```
 
-nd make sure to restart your shell. In case you already have pixi on your system, update to the latest version by doing: 
+and make sure to restart your shell by closing and reopening it. In case you already have pixi on your system, update 
+to the latest version by running the command: 
 
 ```commandline
 pixi self-update
@@ -43,7 +50,8 @@ cd CWEMF-advanced-modflow
 pixi run install
 ```
 
-This will take a bit of time, somewhere between 5 and 15 minutes, largely depending on the available network bandwidth. A successful installation sequence concludes with the message:
+This will take a bit of time, somewhere between 5 and 15 minutes, largely depending on the available network bandwidth. 
+A successful installation sequence concludes with the message:
 
 ```
 Successful testing of pixi environment and MODFLOW 6
@@ -56,7 +64,8 @@ On Linux and MacOS in a terminal window run:
 curl -fsSL https://pixi.sh/install.sh | bash
 ```
 
-and make sure to restart your shell. In case you already have pixi on your system, update to the latest version by doing: 
+and make sure to restart your shell by closing and reopening it. In case you already have pixi on your system, update to 
+the latest version by running the command: 
 
 ```commandline
 pixi self-update
@@ -69,7 +78,8 @@ cd CWEMF-advanced-modflow
 pixi run install
 ```
 
-This will take a bit of time, somewhere between 5 and 15 minutes, largely depending on the available network bandwidth. A successful installation sequence concludes with the message:
+This will take a bit of time, somewhere between 5 and 15 minutes, largely depending on the available network bandwidth. 
+A successful installation sequence concludes with the message:
 
 ```
 Successful testing of pixi environment and MODFLOW 6
@@ -82,7 +92,8 @@ The class exercises will be run using jupyter notebooks. Jupyter Lab can be star
 ```commandline
 pixi run jupyter
 ```
-and, when a browser window is not automatically opened, by clicking or copying the link at the end of the message which will look roughly like this:
+and, when a browser window is not automatically opened, by clicking or copying the link at the end of the message which 
+will look roughly like this:
 
 ```
  To access the server, open this file in a browser:
@@ -104,7 +115,8 @@ Install a recent version of Ubuntu:
 
 You will be asked to provide a username and password. You'll need to remember this information for some future `sudo` operations. 
 
-Alternatively, you can install Ubuntu-24.04 from the Microsoft Store. In that case, you (or your administrator) might need to activate WSL explicitly:
+Alternatively, you can install Ubuntu-24.04 from the Microsoft Store. In that case, you (or your administrator) might 
+need to activate WSL explicitly:
 
 1.	Open Windows 10 Settings app.
 2.	Select Apps.
@@ -114,7 +126,8 @@ Alternatively, you can install Ubuntu-24.04 from the Microsoft Store. In that ca
 
 ## Optional Software
 
-There are a number of optional software products that may be useful for this class. Many of you will already have them installed or will have something similar. They are free and generally easy to install.
+There are a number of optional software products that may be useful for this class. Many of you will already have them 
+installed or will have something similar. They are free and generally easy to install.
   * [Notepad++](https://notepad-plus-plus.org/downloads/)
   * [Visual Studio Code](https://code.visualstudio.com)
   * [QGIS](https://qgis.org)
