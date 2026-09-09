@@ -38,17 +38,17 @@ The agenda may be adjusted during the week in response to student requests.
 
 ### Tuesday
 
-|Time       |Topic                             |Duration, Lead                     |
-|-----------|----------------------------------|-----------------------------------|
-|8:30 AM    |Introductions and Class Overview  |30 minutes, Larsen/Provost/Morway  |
-|9:00 AM    |Review - (DIS/DISV/DISU/catch-all)|1 hour, Larsen                     |
-|10:00 AM   |BREAK                             |15 minutes                         |
-|10:15 AM   |GWF Advanced Packages             |1 hr 45 minutes, Morway            |
-|12:00 PM   |LUNCH                             |1 hour 15 minutes                  |
-|1:15 PM    |Solute and Heat Transport Part 1  |1 hour, Provost/Morway             |
-|2:15 PM    |BREAK                             |15 minutes                         |
-|2:30 PM    |Solute and Heat Transport Part 2  |2 hours, Provost/Morway            |
-|4:30 PM    |ADJOURN                           |                                   |
+| Time     | Topic                            | Duration, Lead                    |
+|----------|----------------------------------|-----------------------------------|
+| 8:30 AM  | Introductions and Class Overview | 45 minutes, Larsen/Provost/Morway |
+| 9:15 AM  | First FloPy Model? Or mesh gen.? | 45 minutes, Larsen                |
+| 10:00 AM | BREAK                            | 15 minutes                        |
+| 10:15 AM | GWF Advanced Packages            | 1 hr 45 minutes, Morway           |
+| 12:00 PM | LUNCH                            | 1 hour 15 minutes                 |
+| 1:15 PM  | Solute and Heat Transport Part 1 | 1 hour, Provost/Morway            |
+| 2:15 PM  | BREAK                            | 15 minutes                        |
+| 2:30 PM  | Solute and Heat Transport Part 2 | 2 hours, Provost/Morway           |
+| 4:30 PM  | ADJOURN                          |                                   |
 
 ### Wednesday
 
@@ -69,16 +69,16 @@ The agenda may be adjusted during the week in response to student requests.
 
 ### Thursday
 
-|Time       |Topic                             |Duration, Lead                     |
-|-----------|----------------------------------|-----------------------------------|
-|8:30 AM    |CSUB Package                      |1 hour, Larsen                     |
-|9:30 AM    |MODFLOW API Part 1                |45 minutes, Larsen                 |
-|10:15 AM   |BREAK                             |15 minutes                         |
-|10:30 AM   |MODFLOW API Part 2                |1 hour 15 minutes, Larsen          |
-|11:45 AM   |LUNCH                             |1 hour 15 minutes                  |
-|1:00 PM    |MODFLOW API - Coupling Models     |1 hour 15 minutes, Larsen          |
-|2:15 PM    |BREAK                             |15 minutes                         |
-|2:30 PM    |ABC Utility                       |45 minutes, Morway                 |
-|3:15 PM    |Advanced Visualization            |45 minutes, Larsen                 |
-|4:00 PM    |Wrap-up/future directions         |30 minutes, Larsen                 |
-|4:30 PM    |ADJOURN                           |                                   |
+| Time     | Topic                         | Duration, Lead            |
+|----------|-------------------------------|---------------------------|
+| 8:30 AM  | CSUB Package                  | 1 hour, Larsen            |
+| 9:30 AM  | MODFLOW API Part 1            | 45 minutes, Larsen        |
+| 10:15 AM | BREAK                         | 15 minutes                |
+| 10:30 AM | MODFLOW API Part 2            | 1 hour 15 minutes, Larsen |
+| 11:45 AM | LUNCH                         | 1 hour 15 minutes         |
+| 1:00 PM  | Mesh Generation with FloPy    | 1 hour, Larsen            |
+| 2:00 PM  | BREAK                         | 15 minutes                |
+| 2:30 PM  | ABC Utility                   | 45 minutes, Morway        |
+| 3:15 PM  | Advanced Visualization        | 45 minutes, Larsen        |
+| 4:00 PM  | Wrap-up/future directions     | 30 minutes, Larsen        |
+| 4:30 PM  | ADJOURN                       |                           |
