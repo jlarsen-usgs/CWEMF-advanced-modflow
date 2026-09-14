@@ -4,7 +4,7 @@ These are instructions for installing the extended version of MODFLOW 6 (with pa
 getting access to class materials and preparing the Python environment so you can follow along with the demos and 
 exercises. 
 
-We support Windows, Linux, and MacOS operating systems and the steps to follow are the same. In case you prefer to run 
+We support Windows, Linux, and MacOS operating systems and the steps to follow are the similar. In case you prefer to run 
 in a Linux environment on Windows, using WSL is a good option. Below you will find instructions on how to install WSL. 
 After a successful installation you should be ready to proceed with step 1.
 
