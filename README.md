@@ -14,10 +14,18 @@ This class will cover many of the advanced MODFLOW 6 capabilities. Most of the c
 Jupyter Notebooks.  In addition to lectures, most sessions will include in-class exercises to give attendees a better 
 understanding of how to use the modeling tools.
 
-## Overview : needs updating
-* **Tuesday**: 
-* **Wednesday**: 
-* **Thursday**: 
+The following topics will be covered during the short course
+* Getting started with MODFLOW 6 and FloPy
+* Mesh generation with FloPy
+* Advanced packages (Multi-Aquifer Well, Streamflow Routing, Lake, Unsaturated Zone Flow, Water Mover, and Compaction and SUBsidence)
+* Coupling models using exchanges
+* Solute and heat transport
+* Particle tracking with MODFLOW 6
+* Variable density flow
+* XT3D multi-point flux approximation for modeling aquifers with full three-dimensional anisotropy
+* Parallel MODFLOW 6 simulations
+* MODFLOW Application Programming Interface (API) for coupling models, creating custom MODFLOW packages, and controlling MODFLOW during a simulation
+* Exporting models to GIS and three dimensional VTK objects
 
 ## Instructors
 * Josh Larsen, U.S. Geological Survey, California Water Science Center
@@ -36,12 +44,12 @@ problems installing the class software.
 The following tentative agenda is based on a start time each morning of 8:30 AM and an ending time each day of 4:30 PM.  
 The agenda may be adjusted during the week in response to student requests.
 
-### Tuesday
+### Tuesday, September 15, 2026
 
 | Time     | Topic                            | Duration, Lead                    |
 |----------|----------------------------------|-----------------------------------|
-| 8:30 AM  | Introductions and Class Overview | 45 minutes, Larsen/Provost/Morway |
-| 9:15 AM  | First FloPy Model? Or mesh gen.? | 45 minutes, Larsen                |
+| 8:30 AM  | Introductions and Class Overview | 30 minutes, Larsen/Provost/Morway |
+| 9:00 AM  | FloPy refresher                  | 1 hour, Larsen                    |
 | 10:00 AM | BREAK                            | 15 minutes                        |
 | 10:15 AM | GWF Advanced Packages            | 1 hr 45 minutes, Morway           |
 | 12:00 PM | LUNCH                            | 1 hour 15 minutes                 |
@@ -50,7 +58,7 @@ The agenda may be adjusted during the week in response to student requests.
 | 2:30 PM  | Solute and Heat Transport Part 2 | 2 hours, Provost/Morway           |
 | 4:30 PM  | ADJOURN                          |                                   |
 
-### Wednesday
+### Wednesday, September 16, 2026
 
 |Time       |Topic                             |Duration, Lead                     |
 |-----------|----------------------------------|-----------------------------------|
@@ -67,7 +75,7 @@ The agenda may be adjusted during the week in response to student requests.
 |3:45 PM    |Parallel MODFLOW Part 2           |45 minutes, Larsen                 |
 |4:30 PM    |ADJOURN                           |                                   |
 
-### Thursday
+### Thursday, September 17, 2026
 
 | Time     | Topic                         | Duration, Lead            |
 |----------|-------------------------------|---------------------------|
