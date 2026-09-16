@@ -1,7 +1,0 @@
-BEGIN options
-END options
-
-BEGIN continuous  FILEOUT  sv.riv.obs.csv
-  riv-swgw  riv  riv
-END continuous  FILEOUT  sv.riv.obs.csv
-
