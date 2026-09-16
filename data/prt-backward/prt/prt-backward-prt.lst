@@ -1,0 +1,273 @@
+                               MODFLOW 6 EXTENDED
+                U.S. GEOLOGICAL SURVEY MODULAR HYDROLOGIC MODEL
+                         PARTICLE TRACKING MODEL (PRT)
+                     VERSION 6.8.0+8680167.dirty 09/02/2026
+
+   MODFLOW 6 compiled Sep 02 2026 20:02:10 with Intel(R) Fortran Intel(R) 64
+  Compiler Classic for applications running on Intel(R) 64, Version 2021.12.0
+                             Build 20240222_000000
+
+This software has been approved for release by the U.S. Geological 
+Survey (USGS). Although the software has been subjected to rigorous 
+review, the USGS reserves the right to update the software as needed 
+pursuant to further analysis and review. No warranty, expressed or 
+implied, is made by the USGS or the U.S. Government as to the 
+functionality of the software and related material nor shall the 
+fact of release constitute any such warranty. Furthermore, the 
+software is released on condition that neither the USGS nor the U.S. 
+Government shall be held liable for any damages resulting from its 
+authorized or unauthorized use. Also refer to the USGS Water 
+Resources Software User Rights Notice for complete use, copyright, 
+and distribution information.
+
+
+As a work of the United States Government, this USGS product is 
+in the public domain within the United States. You can copy, 
+modify, distribute, and perform the work, even for commercial 
+purposes, all without asking permission. Additionally, USGS 
+waives copyright and related rights in the work worldwide 
+through CC0 1.0 Universal Public Domain Dedication 
+(https://creativecommons.org/publicdomain/zero/1.0/).
+
+The following GNU Lesser General Public License (LGPL) libraries
+are used in this USGS product:
+
+    SPARSKIT version 2.0
+      ilut, luson, and qsplit 
+      (https://www-users.cse.umn.edu/~saad/software/SPARSKIT/)
+
+    RCM - Reverse Cuthill McKee Ordering
+      (https://people.math.sc.edu/Burkardt/f_src/rcm/rcm.html)
+
+    BLAS - Basic Linear Algebra Subprograms Level 1
+      (https://people.math.sc.edu/Burkardt/f_src/blas1_d/blas1_d.html)
+
+    SPARSEKIT - Sparse Matrix Utility Package
+      amux, dperm, dvperm, rperm, and cperm
+      (https://people.sc.fsu.edu/~jburkardt/f77_src/sparsekit/sparsekit.html)
+
+The following BSD-3 License libraries are used in this USGS product:
+
+    Modern Fortran DAG Library
+      Copyright (c) 2018, Jacob Williams
+      All rights reserved.
+      (https://github.com/jacobwilliams/daglib)
+
+The following library is used in this USGS product:
+
+    NetCDF, network Common Data Form software library
+      Copyright (c) 1993-2014 University Corporation for Atmospheric
+      Research/Unidata. Redistribution and use in source and binary
+      forms, with or without modification, are permitted provided that
+      the conditions in the NetCDF copyright are met
+        (https://www.unidata.ucar.edu/software/netcdf/copyright.html)
+
+The following 2-clause BSD License library is used in this
+USGS product:
+
+    PETSc, the Portable, Extensible Toolkit for Scientific
+    Computation Library
+      Copyright (c) 1991-2021, UChicago Argonne, LLC
+      and the PETSc Development Team All rights reserved.
+      (https://petsc.org/release/)
+
+MODFLOW 6 compiler options: /Isrc\libmf6_external.a.p /Isrc\libmf6core.a.p
+/Isrc /I..\src /I..\..\netcdf\netCDF4.9.3-NC4-64\include
+/I..\..\netcdf\netcdf-fortran-4.6.2\build\fortran /I..\..\petsc\include
+/I..\..\petsc\arch-mswin-c-opt\include /I. "/IC:\Program Files
+(x86)\Intel\oneAPI\mpi\latest\env\\..\include" "/IC:\Program Files
+(x86)\Intel\oneAPI\mpi\latest\env\\..\include\mpi"
+/ID:/a/modflow6/modflow6/modflow6/.pixi/envs/default/Library/include /MT
+/nologo /warn:general /warn:truncated_source /stand:f18 /O3 /fpe:0
+/heap-arrays:0 /traceback /fpp /Qdiag-disable:7416 /Qdiag-disable:7025
+/Qdiag-disable:5268 /Qdiag-disable:10448 /D__WITH_PETSC__ /D__WITH_MPI__
+/D__WITH_NETCDF__ /DDLL_NETCDF
+/Fdsrc\libmf6core.a.p\Utilities_compilerversion.F90.pdb
+/module:src\libmf6core.a.p
+/Fosrc/libmf6core.a.p/Utilities_compilerversion.F90.obj /c
+
+System command used to initiate simulation:
+D:\teaching\cwemf-2026\CWEMF_advanced_modflow\.pixi\envs\default\Scripts\mf6.exe
+
+MODFLOW was compiled using uniform precision.
+
+Real Variables
+  KIND: 8
+  TINY (smallest non-zero value):    2.225074-308
+  HUGE (largest value):    1.797693+308
+  PRECISION: 15
+  SIZE IN BITS: 64
+
+Integer Variables
+  KIND: 4
+  HUGE (largest value): 2147483647
+  SIZE IN BITS: 32
+
+Long Integer Variables
+  KIND: 8
+  HUGE (largest value): 9223372036854775807
+  SIZE IN BITS: 64
+
+Logical Variables
+  KIND: 4
+  SIZE IN BITS: 32
+ 
+
+ DIS -- STRUCTURED GRID DISCRETIZATION PACKAGE, VERSION 2 : 3/27/2014 - INPUT READ FROM MEMPATH: __INPUT__/PRT-BACKWARD-PRT/DIS                    
+
+
+ MIP MODEL INPUT PACKAGE INPUT READ FROM MEMPATH: __INPUT__/PRT-BACKWARD-PRT/MIP                    
+
+
+ PRP-EXG EXCHANGE PARTICLE RELEASE POINT PACKAGE (PROGRAMMATIC INPUT)
+
+ NAMEFILE OPTIONS:
+ END NAMEFILE OPTIONS:
+ Setting Discretization Options
+    Model length unit [0=UND, 1=FEET, 2=METERS, 3=CENTIMETERS] set as 1
+ End Setting Discretization Options
+
+ Setting Discretization Dimensions
+    NLAY = 3
+    NROW = 21
+    NCOL = 20
+ End Setting Discretization Dimensions
+
+ Setting Discretization Griddata
+    DELR set from input file
+    DELC set from input file
+    TOP set from input file
+    BOTM set from input file
+ End Setting Discretization Griddata
+
+
+ FMI -- FLOW MODEL INTERFACE, VERSION 2, 8/17/2023 INPUT READ FROM MEMPATH: __INPUT__/PRT-BACKWARD-PRT/FMI                    
+
+
+ PROCESSING FMI OPTIONS
+ END OF FMI OPTIONS
+ PROCESSING FMI PACKAGEDATA
+
+ OPENED prt-backward-gwf.hds_bkwd
+ FILE TYPE:DATA(BINARY)   UNIT 1011   STATUS:OLD                 
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READ                
+
+Reading binary file to determine number of records per time step.
+Detected 3 unique records in binary file.
+
+ OPENED prt-backward-gwf.cbb_bkwd
+ FILE TYPE:DATA(BINARY)   UNIT 1012   STATUS:OLD                 
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READ                
+
+Reading budget file to determine number of terms per time step.
+    1000.00                RCHA RCHA_0          
+    1000.00                 RIV RIV_0           
+    1000.00                 WEL WEL_0           
+    1000.00            DATA-SAT NPF             
+    1000.00          DATA-SPDIS NPF             
+    1000.00        FLOW-JA-FACE                 
+Detected 6 unique flow terms in budget file.
+ END OF FMI PACKAGEDATA
+
+ PRP -- PRP PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: __INPUT__/PRT-BACKWARD-PRT/PRP_0                  
+
+ PROCESSING PRP BASE OPTIONS
+ END OF PRP BASE OPTIONS
+ PROCESSING PARTICLE INPUT DIMENSIONS
+ END OF PARTICLE INPUT DIMENSIONS
+ PROCESSING PARTICLE INPUT DIMENSIONS
+    NRELEASEPTS = 100
+    NRELEASETIMES = 0
+ END OF PARTICLE INPUT DIMENSIONS
+
+ PROCESSING PRP_0 PACKAGEDATA
+ END OF PRP_0 PACKAGEDATA
+
+ PRP -- PRP PACKAGE, VERSION 8, 2/22/2014 INPUT READ FROM MEMPATH: PRT-BACKWARD-PRT/EXGPRP-INPUT                     
+      THE LAST TIME STEP WILL BE PRINTED
+
+ PROCESSING OC OPTIONS
+
+    BUDGET INFORMATION WILL BE WRITTEN TO:
+      UNIT NUMBER: 1013
+      FILE NAME: prt-backward-prt.cbb
+
+ OPENED prt-backward-prt.cbb
+ FILE TYPE:DATA(BINARY)   UNIT 1013   STATUS:REPLACE             
+ FORMAT:UNFORMATTED            ACCESS:STREAM              
+ ACTION:READWRITE           
+
+    TRACK EVENT BUFFER: MEMORY
+
+ OPENED prt-backward-prt.trk.csv
+ FILE TYPE:CSV   UNIT 1014   STATUS:REPLACE             
+ FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
+ ACTION:READWRITE           
+
+    PARTICLE TRACKS WILL BE SAVED TO CSV FILE: prt-backward-prt.trk.csv
+    OPENED ON UNIT: 1014
+ END OF OC OPTIONS
+
+ PROCESSING OUTPUT CONTROL DIMENSIONS
+ END OF OUTPUT CONTROL DIMENSIONS
+
+start timestep kper="1" kstp="1" mode="normal"
+
+
+ BEGIN READING OUTPUT CONTROL FOR STRESS PERIOD 1
+      ALL TIME STEPS WILL BE SAVED
+
+ END READING OUTPUT CONTROL FOR STRESS PERIOD 1
+
+ FMI READING BUDGET TERMS FOR KSTP 1 KPER 1
+    1000.00                RCHA RCHA_0          
+    1000.00                 RIV RIV_0           
+    1000.00                 WEL WEL_0           
+    1000.00            DATA-SAT NPF             
+    1000.00          DATA-SPDIS NPF             
+    1000.00        FLOW-JA-FACE                 
+
+ FMI READING HEAD FOR KSTP 1 KPER 1
+
+
+  MASS BUDGET FOR ENTIRE MODEL AT END OF TIME STEP    1, STRESS PERIOD   1
+  ---------------------------------------------------------------------------------------------------
+
+     CUMULATIVE MASS      M       RATES FOR THIS TIME STEP      M/T          PACKAGE NAME    
+     ------------------                 ------------------------                     ----------------
+
+           IN:                                      IN:
+           ---                                      ---
+             STORAGE =           0.0000               STORAGE =           0.0000     PRT                              
+         TERMINATION =           0.0000           TERMINATION =           0.0000     PRT                              
+                 PRP =         100.0000                   PRP =           0.1000     PRP_0                            
+
+            TOTAL IN =         100.0000              TOTAL IN =           0.1000
+
+          OUT:                                     OUT:
+          ----                                     ----
+             STORAGE =           0.0000               STORAGE =           0.0000     PRT                              
+         TERMINATION =         100.0000           TERMINATION =           0.1000     PRT                              
+                 PRP =           0.0000                   PRP =           0.0000     PRP_0                            
+
+           TOTAL OUT =         100.0000             TOTAL OUT =           0.1000
+
+            IN - OUT =           0.0000              IN - OUT =           0.0000
+
+ PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+
+
+
+
+         TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
+                    SECONDS     MINUTES      HOURS       DAYS        YEARS
+                    -----------------------------------------------------------
+   TIME STEP LENGTH 8.64000E+07 1.44000E+06  24000.      1000.0      2.7379    
+ STRESS PERIOD TIME 8.64000E+07 1.44000E+06  24000.      1000.0      2.7379    
+         TOTAL TIME 8.64000E+07 1.44000E+06  24000.      1000.0      2.7379    
+
+
+end timestep
+
