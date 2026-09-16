@@ -39,7 +39,7 @@ be good to install the software on your laptop before the class. Software instal
 installations are provided in [SOFTWARE.md](./SOFTWARE.md). Contact Josh Larsen (jlarsen@usgs.gov) if you have any 
 problems installing the class software.
 
-## Agenda: Tenative, may need further adjustment
+## Agenda:
 
 The following tentative agenda is based on a start time each morning of 8:30 AM and an ending time each day of 4:30 PM.  
 The agenda may be adjusted during the week in response to student requests.
@@ -71,7 +71,6 @@ The agenda may be adjusted during the week in response to student requests.
 |1:45 PM    |Multi-Model Coupling              |30 minutes, Morway                 |
 |2:15 PM    |BREAK                             |15 minutes                         |
 |2:30 PM    |Parallel MODFLOW Part 1           |1 hour, Larsen                     |
-|3:30 PM    |BREAK                             |15 minutes                         |
 |3:45 PM    |Parallel MODFLOW Part 2           |45 minutes, Larsen                 |
 |4:30 PM    |ADJOURN                           |                                   |
 
